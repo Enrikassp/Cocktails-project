@@ -45,6 +45,7 @@ function updateModalBody(drinkInfo) {
 
   for (const drink of drinkData) {
     const ingridients = transformIngridients(drink);
+    const measurements = transformMeasures(drink);
 
     html += `<img
     src="${drink.strDrinkThumb}"
@@ -72,11 +73,18 @@ function updateModalBody(drinkInfo) {
     </h5>
     <h5>Ingredientai:</h5>
     <ul>
-      <li>Tequila</li>
-      <li>Triple sec</li>
-      <li>Lime juice</li>
-      <li>Salt</li>
+      ${ingridients.map(ingridient => `<li>${ingridient}</li>`).join("")}
     </ul>
+    <h5>Matavymai:</h5>
+    <ul>
+      ${measurements.map(measurement => `<li>${measurement}</li>`).join("")}
+    </ul>
+    <h5>
+      Redaguota Data:
+      <span class="text-body-secondary fs-6">
+        ${drink.dateModified}
+      </span>
+    </h5>
   </article>`;
   }
   modalBody.innerHTML = html;
@@ -92,6 +100,18 @@ function transformIngridients(drink) {
     }
   }
   return ingridients;
+}
+
+function transformMeasures(drink) {
+  const measures = [];
+  for (let i = 1; i <= 15; i++) {
+    const measurment = drink[`strMeasure${i}`];
+
+    if (measurment) {
+      measures.push(measurment);
+    }
+  }
+  return measures;
 }
 
 main();
