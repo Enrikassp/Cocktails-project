@@ -42,9 +42,10 @@ function updateModalBody(drinkInfo) {
   const modalBody = document.querySelector(".modal-body");
   let html = "";
   const drinkData = drinkInfo.drinks;
-  const ingridients = transformIngridients(drinkData);
-  console.log(ingridients);
-  for(const drink of drinkData){
+
+  for (const drink of drinkData) {
+    const ingridients = transformIngridients(drink);
+
     html += `<img
     src="${drink.strDrinkThumb}"
     height="200"
@@ -81,14 +82,12 @@ function updateModalBody(drinkInfo) {
   modalBody.innerHTML = html;
 }
 
-function transformIngridients(drink){
+function transformIngridients(drink) {
   const ingridients = [];
-  for(let i = 1; i <= 15; i++){
+  for (let i = 1; i <= 15; i++) {
     const ingridient = drink[`strIngredient${i}`];
-    console.log(ingridient);
-    console.log(drink);
 
-    if(ingridient){
+    if (ingridient) {
       ingridients.push(ingridient);
     }
   }
