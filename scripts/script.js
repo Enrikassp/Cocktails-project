@@ -1,5 +1,6 @@
 async function main(){
   const drinks = await getCocktailsAPI();
+  const drinksInfo = await getCocktailsInfoAPI();
   console.log(drinks);
   fillHTML(drinks);
 }
