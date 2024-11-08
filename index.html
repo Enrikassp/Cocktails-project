@@ -25,11 +25,13 @@
                   placeholder="Ieškoti pagal kokteilio pavadinimą"
                   aria-label="Ieškoti pagal kokteilio pavadinimą"
                   aria-describedby="button-addon2"
+                  id = "search-input"
                 />
                 <button
                   class="btn btn-outline-secondary"
                   type="button"
                   id="button-addon2"
+                  onclick = "searchCocktailBy()"
                 >
                   Ieškoti
                 </button>
@@ -37,33 +39,24 @@
             </div>
             <div class="col-md">
               <div class="form-floating">
-                <select class="form-select" id="cocktailCategoryList">
+                <select class="form-select" id="cocktailCategoryList" onchange="filterByCategoryCocktails()">
                   <option selected>Pasirinkite kategoriją</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
                 </select>
                 <label for="cocktailCategoryList">Pasirinkta kategoriją</label>
               </div>
             </div>
             <div class="col-md">
               <div class="form-floating">
-                <select class="form-select" id="glassTypeList">
+                <select class="form-select" id="glassTypeList" onchange="filterByGlassTypeCocktails()">
                   <option selected>Pasirinkite stiklinės tipą</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
                 </select>
                 <label for="glassTypeList">Pasirinktas stiklinės tipas</label>
               </div>
             </div>
             <div class="col-md">
               <div class="form-floating">
-                <select class="form-select" id="ingridientList">
+                <select class="form-select" id="ingridientList" onchange="filterByIngridientsCocktails()">
                   <option selected>Pasirinkite ingridientą</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
                 </select>
                 <label for="ingridientList">Pasirinktas ingridientas</label>
               </div>
@@ -131,6 +124,10 @@
       crossorigin="anonymous"
     ></script>
     <script src="./scripts/api.js"></script>
+    <script src="./scripts/filterByGlassType.js"></script>
+    <script src="./scripts/filterByCategory.js"></script>
+    <script src="./scripts/filterByIngridients.js"></script>
+    <script src="./scripts/modal.js"></script>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
