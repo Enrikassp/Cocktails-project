@@ -13,9 +13,81 @@
     <title>Cocktails</title>
   </head>
   <body>
-    <div
-      class="cocktailList d-flex justify-content-around gap-5 flex-wrap"
-    ></div>
+    <section id="cocktailNav">
+      <div class="widthContainer">
+        <div class="cocktailNavigation">
+          <div class="row g-2 inputGroup">
+            <div class="col-md">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Ieškoti pagal kokteilio pavadinimą"
+                  aria-label="Ieškoti pagal kokteilio pavadinimą"
+                  aria-describedby="button-addon2"
+                />
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  id="button-addon2"
+                >
+                  Ieškoti
+                </button>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <select class="form-select" id="cocktailCategoryList">
+                  <option selected>Pasirinkite kategoriją</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <label for="cocktailCategoryList">Pasirinkta kategoriją</label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <select class="form-select" id="glassTypeList">
+                  <option selected>Pasirinkite stiklinės tipą</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <label for="glassTypeList">Pasirinktas stiklinės tipas</label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <select class="form-select" id="ingridientList">
+                  <option selected>Pasirinkite ingridientą</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <label for="ingridientList">Pasirinktas ingridientas</label>
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="generateRandomCocktail()"
+          >
+            Sugeneruoti random kokteilį
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <div class="widthContainer">
+        <div
+          class="cocktailList d-flex justify-content-around gap-5 flex-wrap"
+        ></div>
+      </div>
+    </main>
 
     <div
       class="modal fade"
@@ -34,8 +106,7 @@
           </div>
           <div
             class="modal-body d-flex justify-content-center flex-column align-items-center"
-          >
-          </div>
+          ></div>
           <div class="modal-footer">
             <button
               type="button"

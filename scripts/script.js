@@ -73,11 +73,11 @@ function updateModalBody(drinkInfo) {
     </h5>
     <h5>Ingredientai:</h5>
     <ul>
-      ${ingridients.map(ingridient => `<li>${ingridient}</li>`).join("")}
+      ${ingridients.map((ingridient) => `<li>${ingridient}</li>`).join("")}
     </ul>
     <h5>Matavymai:</h5>
     <ul>
-      ${measurements.map(measurement => `<li>${measurement}</li>`).join("")}
+      ${measurements.map((measurement) => `<li>${measurement}</li>`).join("")}
     </ul>
     <h5>
       Redaguota Data:
@@ -115,3 +115,7 @@ function transformMeasures(drink) {
 }
 
 main();
+
+function generateRandomCocktail() {
+  // PADARYTI RANDOM KOKTEILIO GENERAVIMA SU MODULINIU LANGU
+}
